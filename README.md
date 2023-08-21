@@ -1,1 +1,1 @@
-"# fullStackAdmin" 
+# fullStackAdmin
