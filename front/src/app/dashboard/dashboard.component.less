@@ -1,0 +1,14 @@
+#layoutSidenav {
+    display: flex;
+    flex-direction: row;
+    width:100vw;
+    height: calc(100vh - 56px) !important;
+}
+#layoutSidenav #layoutSidenav_nav {
+    width: 20%;
+    flex-basis: 225px;
+    flex-shrink: 0;
+    transition: transform 0.15s ease-in-out;
+    z-index: 1038;
+    transform: translateX(-225px);
+}
