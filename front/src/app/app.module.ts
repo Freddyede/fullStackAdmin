@@ -17,25 +17,31 @@ import { LoginComponent } from './login/login.component';
     Services
  */
 import { CookieService } from "ngx-cookie-service";
-import { AdminComponent } from './admin/admin.component';
-import {NgOptimizedImage} from "@angular/common";
-import { FindComponentComponent } from './find-component/find-component.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import {AdminComponent} from "./admin/admin.component";
+import {FindComponentComponent} from "./find-component/find-component.component";
+import {SidebarComponent} from "./sidebar/sidebar.component";
+import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
     declarations: [
-      AppComponent,
-      HomeComponent,
-      RegisterComponent,
-      LoginComponent,
-      AdminComponent,
-      FindComponentComponent
+        AppComponent,
+        HomeComponent,
+        AdminComponent,
+        FindComponentComponent,
+        RegisterComponent,
+        LoginComponent,
+        NavbarComponent,
+        SidebarComponent,
+        AdminNavbarComponent,
+        DashboardComponent
     ],
     imports: [
         BrowserModule,
         HttpClientModule,
         FormsModule,
-        AppRoutingModule,
-        NgOptimizedImage
+        AppRoutingModule
     ],
     providers: [CookieService],
     bootstrap: [AppComponent]

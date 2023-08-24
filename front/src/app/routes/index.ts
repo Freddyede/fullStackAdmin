@@ -2,32 +2,51 @@ import { Routes } from "@angular/router";
 import { HomeComponent } from "../home/home.component";
 import { RegisterComponent } from "../register/register.component";
 import { LoginComponent } from "../login/login.component";
-import { authGuard } from "../auth.guard";
-import { AdminComponent } from "../admin/admin.component";
+import {authGuard} from "../auth.guard";
 import {FindComponentComponent} from "../find-component/find-component.component";
+import {AdminComponent} from "../admin/admin.component";
+import {DashboardComponent} from "../dashboard/dashboard.component";
 
 export const routes: Routes = [
     {
         path: '',
-        component: HomeComponent
+        component: HomeComponent,
+        pathMatch: 'full'
     },
     {
         path: 'register',
-        component: RegisterComponent
+        component: RegisterComponent,
+        pathMatch: 'full'
     },
     {
         path: 'login',
-        component: LoginComponent
+        component: LoginComponent,
+        pathMatch: 'full'
     },
     {
-        path: 'admin',
+        path:'admin',
+        component: DashboardComponent
+    },
+    {
+        path: 'admin/platforms',
         canActivate: [authGuard],
         component: AdminComponent,
-        children: [
-            {
-                path: ':id',
-                component: FindComponentComponent
-            }
-        ]
+        pathMatch: 'full'
+    },
+    {
+        path: 'admin/platforms/:id',
+        canActivate: [authGuard],
+        component: FindComponentComponent,
+        pathMatch: 'full'
+    },
+    {
+        path:'**',
+        redirectTo:'',
+        pathMatch: 'full'
+    },
+    {
+        path:'**',
+        redirectTo:'',
+        pathMatch: 'full'
     }
 ];

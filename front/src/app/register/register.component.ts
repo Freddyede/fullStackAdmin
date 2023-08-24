@@ -17,7 +17,6 @@ export class RegisterComponent implements OnInit{
 
     submit(e: Event) {
         e.preventDefault();
-        console.log(this.user);
         this.http.postUri('/register', this.user).subscribe(
             (res: any) => res && this.roads.navigate(['/login'])
         )
